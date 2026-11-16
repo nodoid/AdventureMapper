@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="AdventureMapper.Views.Popups.DescriptionPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+    BackgroundColor="#99000000"
+    CloseWhenBackgroundIsClicked="False">
+
+    <Grid Padding="24">
+        <Border
+            Padding="22"
+            HorizontalOptions="Center"
+            MaximumWidthRequest="560"
+            BackgroundColor="#FFFFFF"
+            Stroke="#D9E0EA"
+            StrokeThickness="1"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="12">
+                <Label
+                    x:Name="HeadingLabel"
+                    FontFamily="OpenSansSemibold"
+                    FontSize="18"
+                    Text="{loc:Translate Desc_Title}"
+                    TextColor="#1C1F27" />
+
+                <Label
+                    Style="{StaticResource Caption}"
+                    Text="{loc:Translate Desc_Hint}" />
+
+                <Editor
+                    x:Name="DescriptionEditor"
+                    AutoSize="TextChanges"
+                    HeightRequest="140"
+                    MaxLength="127"
+                    Placeholder="{loc:Translate Desc_Placeholder}"
+                    PlaceholderColor="#8A93A5"
+                    Style="{StaticResource FieldEditor}" />
+
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                    <Label
+                        x:Name="CounterLabel"
+                        Style="{StaticResource Caption}"
+                        VerticalOptions="Center" />
+                    <Button
+                        Grid.Column="1"
+                        Clicked="OnCancelClicked"
+                        Style="{StaticResource ToolbarButton}"
+                        Text="{loc:Translate Common_Cancel}" />
+                    <Button
+                        Grid.Column="2"
+                        Clicked="OnSaveClicked"
+                        Style="{StaticResource AccentButton}"
+                        Text="{loc:Translate Common_Save}" />
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+
+</pages:PopupPage>

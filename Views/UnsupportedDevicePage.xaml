@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AdventureMapper.Views.UnsupportedDevicePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    Title="{loc:Translate App_Title}"
+    BackgroundColor="#F3F5F9">
+
+    <Grid Padding="32">
+        <VerticalStackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Spacing="12"
+            MaximumWidthRequest="520">
+            <Label
+                FontFamily="OpenSansSemibold"
+                FontSize="22"
+                Text="{loc:Translate Unsupported_Title}"
+                TextColor="#1C1F27" />
+            <Label
+                FontSize="14"
+                Text="{loc:Translate Unsupported_Body}"
+                TextColor="#5A6478" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

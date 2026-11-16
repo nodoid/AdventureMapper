@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AdventureMapper.Views.MapTabPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    Title="{loc:Translate Tab_Map}"
+    BackgroundColor="#F3F5F9">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ContentView x:Name="ToolbarHost" Grid.Row="0" BackgroundColor="#FFFFFF" />
+        <ContentView x:Name="CanvasHost" Grid.Row="1" />
+
+        <Grid
+            Grid.Row="2"
+            Padding="12,6"
+            BackgroundColor="#FFFFFF"
+            ColumnDefinitions="*,Auto">
+            <Label x:Name="StatusLabel" Style="{StaticResource Caption}" />
+            <Label
+                x:Name="SaveStatusLabel"
+                Grid.Column="1"
+                Style="{StaticResource Caption}"
+                HorizontalTextAlignment="End" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

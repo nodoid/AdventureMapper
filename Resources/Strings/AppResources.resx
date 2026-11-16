@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App_Title" xml:space="preserve">
+    <value>Adventure Mapper</value>
+  </data>
+  <data name="Tab_Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Tab_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Common_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Unsupported_Title" xml:space="preserve">
+    <value>A larger screen is needed</value>
+  </data>
+  <data name="Unsupported_Body" xml:space="preserve">
+    <value>Adventure Mapper is designed for iPad and Android tablets (Android 12L or newer), and for macOS and Windows desktops. Phones are not supported.</value>
+  </data>
+  <data name="Toolbar_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Toolbar_Open" xml:space="preserve">
+    <value>Open…</value>
+  </data>
+  <data name="Toolbar_Export" xml:space="preserve">
+    <value>Export…</value>
+  </data>
+  <data name="Toolbar_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Toolbar_AddRoom" xml:space="preserve">
+    <value>Add room:</value>
+  </data>
+  <data name="Toolbar_N" xml:space="preserve">
+    <value>↑ N</value>
+  </data>
+  <data name="Toolbar_NE" xml:space="preserve">
+    <value>↗ NE</value>
+  </data>
+  <data name="Toolbar_E" xml:space="preserve">
+    <value>→ E</value>
+  </data>
+  <data name="Toolbar_SE" xml:space="preserve">
+    <value>↘ SE</value>
+  </data>
+  <data name="Toolbar_S" xml:space="preserve">
+    <value>↓ S</value>
+  </data>
+  <data name="Toolbar_SW" xml:space="preserve">
+    <value>↙ SW</value>
+  </data>
+  <data name="Toolbar_W" xml:space="preserve">
+    <value>← W</value>
+  </data>
+  <data name="Toolbar_NW" xml:space="preserve">
+    <value>↖ NW</value>
+  </data>
+  <data name="Toolbar_UpFloor" xml:space="preserve">
+    <value>Up a floor</value>
+  </data>
+  <data name="Toolbar_DownFloor" xml:space="preserve">
+    <value>Down a floor</value>
+  </data>
+  <data name="Toolbar_PrevFloor" xml:space="preserve">
+    <value>◀ Floor</value>
+  </data>
+  <data name="Toolbar_NextFloor" xml:space="preserve">
+    <value>Floor ▶</value>
+  </data>
+  <data name="Toolbar_FloorSummary" xml:space="preserve">
+    <value>Layer {0} · {1} ({2} rooms)</value>
+  </data>
+  <data name="Toolbar_FloorSummaryOne" xml:space="preserve">
+    <value>Layer {0} · {1} (1 room)</value>
+  </data>
+  <data name="Inspector_Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Inspector_TitlePlaceholder" xml:space="preserve">
+    <value>Map title</value>
+  </data>
+  <data name="Inspector_AuthorPlaceholder" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Inspector_Layers" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="Inspector_FloorPlaceholder" xml:space="preserve">
+    <value>Floor</value>
+  </data>
+  <data name="Inspector_LayerNamePlaceholder" xml:space="preserve">
+    <value>Layer name</value>
+  </data>
+  <data name="Inspector_FloorAbove" xml:space="preserve">
+    <value>Floor above</value>
+  </data>
+  <data name="Inspector_FloorBelow" xml:space="preserve">
+    <value>Floor below</value>
+  </data>
+  <data name="Inspector_Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Inspector_NoRoom" xml:space="preserve">
+    <value>Tap a room on the map, or add one with a direction button.</value>
+  </data>
+  <data name="Inspector_RoomNamePlaceholder" xml:space="preserve">
+    <value>Room name</value>
+  </data>
+  <data name="Inspector_EditDescription" xml:space="preserve">
+    <value>Edit description…</value>
+  </data>
+  <data name="Inspector_RoomTypePlaceholder" xml:space="preserve">
+    <value>Room type</value>
+  </data>
+  <data name="Inspector_BridgeHint" xml:space="preserve">
+    <value>Bridge: the walkway is one layer above the floor it spans.</value>
+  </data>
+  <data name="Inspector_BridgeLayerPlaceholder" xml:space="preserve">
+    <value>Spans layer</value>
+  </data>
+  <data name="Inspector_BridgeRoomPlaceholder" xml:space="preserve">
+    <value>Room beneath</value>
+  </data>
+  <data name="Inspector_ConnectionsHint" xml:space="preserve">
+    <value>Connections — target written as layer-room</value>
+  </data>
+  <data name="Inspector_TargetPlaceholder" xml:space="preserve">
+    <value>1-4</value>
+  </data>
+  <data name="Inspector_Puzzles" xml:space="preserve">
+    <value>Puzzles</value>
+  </data>
+  <data name="Inspector_AddPuzzle" xml:space="preserve">
+    <value>Add puzzle…</value>
+  </data>
+  <data name="Inspector_DeleteRoom" xml:space="preserve">
+    <value>Delete room</value>
+  </data>
+  <data name="Inspector_AutoSave" xml:space="preserve">
+    <value>Auto save</value>
+  </data>
+  <data name="Inspector_IntervalPlaceholder" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="Inspector_SaveNow" xml:space="preserve">
+    <value>Save now</value>
+  </data>
+  <data name="Inspector_Checks" xml:space="preserve">
+    <value>Map checks</value>
+  </data>
+  <data name="Inspector_NoDescription" xml:space="preserve">
+    <value>No description yet.</value>
+  </data>
+  <data name="Inspector_NoConnections" xml:space="preserve">
+    <value>No connections yet.</value>
+  </data>
+  <data name="Inspector_NoPuzzles" xml:space="preserve">
+    <value>No puzzles in this room yet.</value>
+  </data>
+  <data name="Inspector_AllGood" xml:space="preserve">
+    <value>Everything checks out.</value>
+  </data>
+  <data name="Inspector_RoomsOne" xml:space="preserve">
+    <value>1 room on this layer.</value>
+  </data>
+  <data name="Inspector_RoomsMany" xml:space="preserve">
+    <value>{0} rooms on this layer.</value>
+  </data>
+  <data name="Inspector_RoomHeading" xml:space="preserve">
+    <value>{0} · layer {1} · {2}</value>
+  </data>
+  <data name="Inspector_DescriptionHeading" xml:space="preserve">
+    <value>{0} — description</value>
+  </data>
+  <data name="Inspector_AutoSaveOff" xml:space="preserve">
+    <value>Automatic saving is off.</value>
+  </data>
+  <data name="Inspector_LastSave" xml:space="preserve">
+    <value>Last save {0} · every {1}</value>
+  </data>
+  <data name="Inspector_SavesEvery" xml:space="preserve">
+    <value>Saves every {0}.</value>
+  </data>
+  <data name="AutoSave_Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="AutoSave_30" xml:space="preserve">
+    <value>Every 30 seconds</value>
+  </data>
+  <data name="AutoSave_60" xml:space="preserve">
+    <value>Every minute</value>
+  </data>
+  <data name="AutoSave_120" xml:space="preserve">
+    <value>Every 2 minutes</value>
+  </data>
+  <data name="AutoSave_300" xml:space="preserve">
+    <value>Every 5 minutes</value>
+  </data>
+  <data name="AutoSave_600" xml:space="preserve">
+    <value>Every 10 minutes</value>
+  </data>
+  <data name="Interval_Seconds" xml:space="preserve">
+    <value>{0} seconds</value>
+  </data>
+  <data name="Interval_Minute" xml:space="preserve">
+    <value>minute</value>
+  </data>
+  <data name="Interval_Minutes" xml:space="preserve">
+    <value>{0} minutes</value>
+  </data>
+  <data name="RoomKind_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="RoomKind_Bridge" xml:space="preserve">
+    <value>Bridge</value>
+  </data>
+  <data name="RoomKind_Pit" xml:space="preserve">
+    <value>Pit</value>
+  </data>
+  <data name="PuzzleKind_Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="PuzzleKind_Riddle" xml:space="preserve">
+    <value>Riddle</value>
+  </data>
+  <data name="PuzzleKind_Mechanism" xml:space="preserve">
+    <value>Mechanism</value>
+  </data>
+  <data name="PuzzleKind_Trap" xml:space="preserve">
+    <value>Trap</value>
+  </data>
+  <data name="PuzzleKind_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="PuzzleKind_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Ready.</value>
+  </data>
+  <data name="Status_NewMap" xml:space="preserve">
+    <value>New map created.</value>
+  </data>
+  <data name="Status_MapLoaded" xml:space="preserve">
+    <value>Map loaded.</value>
+  </data>
+  <data name="Status_Opened" xml:space="preserve">
+    <value>Opened {0}</value>
+  </data>
+  <data name="Status_AddedRoom" xml:space="preserve">
+    <value>Added {0} at {1}.</value>
+  </data>
+  <data name="Status_Deleted" xml:space="preserve">
+    <value>Deleted {0}.</value>
+  </data>
+  <data name="Status_NoRoom" xml:space="preserve">
+    <value>There is no room {0} in this map.</value>
+  </data>
+  <data name="Status_Linked" xml:space="preserve">
+    <value>Linked {0} {1} → {2}.</value>
+  </data>
+  <data name="Status_Layer" xml:space="preserve">
+    <value>Layer {0} ({1}).</value>
+  </data>
+  <data name="Status_SavedDraft" xml:space="preserve">
+    <value>Auto-saved draft {0}.</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>Saved {0}.</value>
+  </data>
+  <data name="Status_AutoSaveFailed" xml:space="preserve">
+    <value>Auto save failed: {0}</value>
+  </data>
+  <data name="Status_UnsavedSuffix" xml:space="preserve">
+    <value> · unsaved changes</value>
+  </data>
+  <data name="Status_AutoSavedSuffix" xml:space="preserve">
+    <value> · auto-saved {0}</value>
+  </data>
+  <data name="Status_NotSaved" xml:space="preserve">
+    <value>Not saved yet</value>
+  </data>
+  <data name="Status_DescriptionUpdated" xml:space="preserve">
+    <value>Description updated.</value>
+  </data>
+  <data name="Status_RoomTypeUpdated" xml:space="preserve">
+    <value>Room type updated.</value>
+  </data>
+  <data name="Status_BridgeUpdated" xml:space="preserve">
+    <value>Bridge updated.</value>
+  </data>
+  <data name="Status_ConnectionRemoved" xml:space="preserve">
+    <value>Connection removed.</value>
+  </data>
+  <data name="Status_PuzzleAdded" xml:space="preserve">
+    <value>Puzzle added.</value>
+  </data>
+  <data name="Status_PuzzleUpdated" xml:space="preserve">
+    <value>Puzzle updated.</value>
+  </data>
+  <data name="Status_PuzzleRemoved" xml:space="preserve">
+    <value>Puzzle removed.</value>
+  </data>
+  <data name="Dialog_UnsavedTitle" xml:space="preserve">
+    <value>Unsaved changes</value>
+  </data>
+  <data name="Dialog_UnsavedMessage" xml:space="preserve">
+    <value>Discard your unsaved changes and continue?</value>
+  </data>
+  <data name="Dialog_Discard" xml:space="preserve">
+    <value>Discard</value>
+  </data>
+  <data name="Dialog_OpenError" xml:space="preserve">
+    <value>Could not open the map</value>
+  </data>
+  <data name="Dialog_SaveError" xml:space="preserve">
+    <value>Could not save the map</value>
+  </data>
+  <data name="Dialog_ExportFailed" xml:space="preserve">
+    <value>Export failed</value>
+  </data>
+  <data name="Dialog_PrintFailed" xml:space="preserve">
+    <value>Could not print the map</value>
+  </data>
+  <data name="Dialog_ExportTitle" xml:space="preserve">
+    <value>Export map</value>
+  </data>
+  <data name="Dialog_ExportJpeg" xml:space="preserve">
+    <value>JPEG image (.jpg)</value>
+  </data>
+  <data name="Dialog_ExportPdf" xml:space="preserve">
+    <value>PDF document (.pdf)</value>
+  </data>
+  <data name="Dialog_ExportJson" xml:space="preserve">
+    <value>JSON file (.json)</value>
+  </data>
+  <data name="Dialog_DeleteTitle" xml:space="preserve">
+    <value>Delete room</value>
+  </data>
+  <data name="Dialog_DeleteMessage" xml:space="preserve">
+    <value>Delete {0} ({1})? Connections to it will be removed too.</value>
+  </data>
+  <data name="Dialog_DeleteSimple" xml:space="preserve">
+    <value>Delete {0} ({1})?</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Menu_New" xml:space="preserve">
+    <value>New map</value>
+  </data>
+  <data name="Menu_Open" xml:space="preserve">
+    <value>Open…</value>
+  </data>
+  <data name="Menu_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Menu_SaveAs" xml:space="preserve">
+    <value>Save as…</value>
+  </data>
+  <data name="Menu_Print" xml:space="preserve">
+    <value>Print map…</value>
+  </data>
+  <data name="Menu_ExportJpeg" xml:space="preserve">
+    <value>Export JPEG image…</value>
+  </data>
+  <data name="Menu_ExportPdf" xml:space="preserve">
+    <value>Export PDF document…</value>
+  </data>
+  <data name="Menu_ExportJson" xml:space="preserve">
+    <value>Export JSON file…</value>
+  </data>
+  <data name="Menu_Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Menu_AddNorth" xml:space="preserve">
+    <value>Add room north</value>
+  </data>
+  <data name="Menu_AddNorthEast" xml:space="preserve">
+    <value>Add room north-east</value>
+  </data>
+  <data name="Menu_AddEast" xml:space="preserve">
+    <value>Add room east</value>
+  </data>
+  <data name="Menu_AddSouthEast" xml:space="preserve">
+    <value>Add room south-east</value>
+  </data>
+  <data name="Menu_AddSouth" xml:space="preserve">
+    <value>Add room south</value>
+  </data>
+  <data name="Menu_AddSouthWest" xml:space="preserve">
+    <value>Add room south-west</value>
+  </data>
+  <data name="Menu_AddWest" xml:space="preserve">
+    <value>Add room west</value>
+  </data>
+  <data name="Menu_AddNorthWest" xml:space="preserve">
+    <value>Add room north-west</value>
+  </data>
+  <data name="Menu_AddUp" xml:space="preserve">
+    <value>Add room a floor up</value>
+  </data>
+  <data name="Menu_AddDown" xml:space="preserve">
+    <value>Add room a floor down</value>
+  </data>
+  <data name="Menu_DeleteRoom" xml:space="preserve">
+    <value>Delete room</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>Layer</value>
+  </data>
+  <data name="Menu_FloorAbove" xml:space="preserve">
+    <value>Add floor above</value>
+  </data>
+  <data name="Menu_FloorBelow" xml:space="preserve">
+    <value>Add floor below</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>About Adventure Mapper</value>
+  </data>
+  <data name="Menu_MapFormat" xml:space="preserve">
+    <value>Map format</value>
+  </data>
+  <data name="About_Body" xml:space="preserve">
+    <value>Layer 0 is the ground floor. Up and Down move one layer at a time, and a bridge raises you one layer above the floor it spans.
+
+Rooms are addressed as layer-room, for example 0-3 or -1-2. Map files use the .ama extension.</value>
+  </data>
+  <data name="MapFormat_Body" xml:space="preserve">
+    <value>.ama files are JSON. A connection stores its destination as layer-room, for example 1-4. Layer 0 is the ground; Up and Down change the layer number, and a bridge lifts the walkway one layer above the floor it spans.</value>
+  </data>
+  <data name="MapFormat_Title" xml:space="preserve">
+    <value>Map format</value>
+  </data>
+  <data name="Desc_Title" xml:space="preserve">
+    <value>Room description</value>
+  </data>
+  <data name="Desc_Hint" xml:space="preserve">
+    <value>A brief description — 127 characters at most.</value>
+  </data>
+  <data name="Desc_Placeholder" xml:space="preserve">
+    <value>Dust hangs in the air; a cold draught comes from the east.</value>
+  </data>
+  <data name="Puzzle_Title" xml:space="preserve">
+    <value>Puzzle</value>
+  </data>
+  <data name="Puzzle_Heading" xml:space="preserve">
+    <value>Puzzle — {0}</value>
+  </data>
+  <data name="Puzzle_NamePlaceholder" xml:space="preserve">
+    <value>Puzzle name</value>
+  </data>
+  <data name="Puzzle_TypePlaceholder" xml:space="preserve">
+    <value>Puzzle type</value>
+  </data>
+  <data name="Puzzle_Prompt" xml:space="preserve">
+    <value>What the players see</value>
+  </data>
+  <data name="Puzzle_PromptPlaceholder" xml:space="preserve">
+    <value>A brass lock with four worn dials.</value>
+  </data>
+  <data name="Puzzle_Solution" xml:space="preserve">
+    <value>Solution or the way past it</value>
+  </data>
+  <data name="Puzzle_SolutionPlaceholder" xml:space="preserve">
+    <value>Turn the dials to 4-1-7-2.</value>
+  </data>
+  <data name="Puzzle_Reward" xml:space="preserve">
+    <value>Reward (optional)</value>
+  </data>
+  <data name="Puzzle_Hint" xml:space="preserve">
+    <value>Puzzles belong to the selected room.</value>
+  </data>
+  <data name="Warn_NoRooms" xml:space="preserve">
+    <value>The map has no rooms yet.</value>
+  </data>
+  <data name="Warn_DuplicateId" xml:space="preserve">
+    <value>Room id {0} is used more than once.</value>
+  </data>
+  <data name="Warn_DescriptionTooLong" xml:space="preserve">
+    <value>{0} has a description longer than {1} characters.</value>
+  </data>
+  <data name="Warn_UndefinedLayer" xml:space="preserve">
+    <value>Room {0} is on layer {1}, which is not defined.</value>
+  </data>
+  <data name="Warn_NoConnections" xml:space="preserve">
+    <value>{0} ({1}) has no connections.</value>
+  </data>
+  <data name="Warn_DuplicateDirection" xml:space="preserve">
+    <value>{0} ({1}) has more than one {2} connection.</value>
+  </data>
+  <data name="Warn_MissingTarget" xml:space="preserve">
+    <value>{0} {1} points at missing room {2}.</value>
+  </data>
+  <data name="Warn_UpLayer" xml:space="preserve">
+    <value>Up from {0} should lead to layer {1}, not {2}.</value>
+  </data>
+  <data name="Warn_DownBridge" xml:space="preserve">
+    <value>Down from bridge {0} should return to layer {1}, not {2}.</value>
+  </data>
+  <data name="Warn_DownLayer" xml:space="preserve">
+    <value>Down from {0} should lead to layer {1}, not {2}.</value>
+  </data>
+  <data name="Warn_SameLayer" xml:space="preserve">
+    <value>A {0} connection from {1} stays on layer {2}.</value>
+  </data>
+  <data name="Warn_BridgeSpanAbove" xml:space="preserve">
+    <value>Bridge {0} spans layer {1}, which is above the bridge itself.</value>
+  </data>
+  <data name="Warn_BridgeMissing" xml:space="preserve">
+    <value>Bridge {0} spans missing room {1}.</value>
+  </data>
+  <data name="Warn_BridgeOverPit" xml:space="preserve">
+    <value>Bridge {0} spans the pit {1}: going down is a fall.</value>
+  </data>
+  <data name="Warn_BridgeRaises" xml:space="preserve">
+    <value>Bridge {0} raises the walkway to layer {1}.</value>
+  </data>
+  <data name="Warn_Pit" xml:space="preserve">
+    <value>Pit {0} is a hazard: falling through drops players to the layer below.</value>
+  </data>
+  <data name="Layer_Ground" xml:space="preserve">
+    <value>Ground</value>
+  </data>
+  <data name="Layer_Upper" xml:space="preserve">
+    <value>Upper {0}</value>
+  </data>
+  <data name="Layer_Lower" xml:space="preserve">
+    <value>Lower {0}</value>
+  </data>
+  <data name="Layer_Display" xml:space="preserve">
+    <value>Layer {0} — {1}</value>
+  </data>
+  <data name="File_NotValid" xml:space="preserve">
+    <value>This file is not a valid Adventure Mapper map (the JSON could not be read).</value>
+  </data>
+  <data name="File_Empty" xml:space="preserve">
+    <value>The map file is empty.</value>
+  </data>
+  <data name="File_UnsupportedFormat" xml:space="preserve">
+    <value>Unsupported map format &#x27;{0}&#x27;.</value>
+  </data>
+  <data name="File_NotFound" xml:space="preserve">
+    <value>The file &#x27;{0}&#x27; could not be found.</value>
+  </data>
+  <data name="Default_Untitled" xml:space="preserve">
+    <value>Untitled adventure</value>
+  </data>
+  <data name="Default_Entrance" xml:space="preserve">
+    <value>Entrance</value>
+  </data>
+  <data name="Default_EntranceDescription" xml:space="preserve">
+    <value>The way in. Dust hangs in the air.</value>
+  </data>
+  <data name="Default_RoomName" xml:space="preserve">
+    <value>Room {0}</value>
+  </data>
+  <data name="Picker_OpenMap" xml:space="preserve">
+    <value>Open an adventure map</value>
+  </data>
+  <data name="Export_Index" xml:space="preserve">
+    <value>Room &amp; puzzle index</value>
+  </data>
+  <data name="Export_LayerHeading" xml:space="preserve">
+    <value>Layer {0} — {1}</value>
+  </data>
+  <data name="Export_NoRooms" xml:space="preserve">
+    <value>(no rooms)</value>
+  </data>
+  <data name="Export_NoConnections" xml:space="preserve">
+    <value>No connections.</value>
+  </data>
+  <data name="Export_Connections" xml:space="preserve">
+    <value>Connections: {0}</value>
+  </data>
+  <data name="Export_BridgeOverRoom" xml:space="preserve">
+    <value>Bridge over room {0}; down returns to layer {1} unless the room below is a pit.</value>
+  </data>
+  <data name="Export_BridgeOverLayer" xml:space="preserve">
+    <value>Bridge over layer {0}; down returns to layer {1} unless the room below is a pit.</value>
+  </data>
+  <data name="Export_Puzzle" xml:space="preserve">
+    <value>Puzzle — {0} ({1}): {2}{3}</value>
+  </data>
+  <data name="Export_Connector" xml:space="preserve">
+    <value> · </value>
+  </data>
+  <data name="Direction_North" xml:space="preserve">
+    <value>North</value>
+  </data>
+  <data name="Direction_NorthEast" xml:space="preserve">
+    <value>North East</value>
+  </data>
+  <data name="Direction_East" xml:space="preserve">
+    <value>East</value>
+  </data>
+  <data name="Direction_SouthEast" xml:space="preserve">
+    <value>South East</value>
+  </data>
+  <data name="Direction_South" xml:space="preserve">
+    <value>South</value>
+  </data>
+  <data name="Direction_SouthWest" xml:space="preserve">
+    <value>South West</value>
+  </data>
+  <data name="Direction_West" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="Direction_NorthWest" xml:space="preserve">
+    <value>North West</value>
+  </data>
+  <data name="Direction_Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Direction_Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="DirectionShort_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="DirectionShort_NE" xml:space="preserve">
+    <value>NE</value>
+  </data>
+  <data name="DirectionShort_E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="DirectionShort_SE" xml:space="preserve">
+    <value>SE</value>
+  </data>
+  <data name="DirectionShort_S" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="DirectionShort_SW" xml:space="preserve">
+    <value>SW</value>
+  </data>
+  <data name="DirectionShort_W" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="DirectionShort_NW" xml:space="preserve">
+    <value>NW</value>
+  </data>
+  <data name="DirectionShort_Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="DirectionShort_Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>Exported {0}.</value>
+  </data>
+  <data name="Puzzle_DefaultName" xml:space="preserve">
+    <value>Puzzle {0}</value>
+  </data>
+  <data name="Puzzle_NewDefault" xml:space="preserve">
+    <value>New puzzle</value>
+  </data>
+  <data name="Room_DefaultName" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Canvas_NoRooms" xml:space="preserve">
+    <value>No rooms on this layer yet — add one with a direction button.</value>
+  </data>
+  <data name="Canvas_BridgeSpan" xml:space="preserve">
+    <value>Bridge · spans layer {0}</value>
+  </data>
+  <data name="Canvas_PuzzleOne" xml:space="preserve">
+    <value>1 puzzle</value>
+  </data>
+  <data name="Canvas_Puzzles" xml:space="preserve">
+    <value>{0} puzzles</value>
+  </data>
+  <data name="Export_NoLayers" xml:space="preserve">
+    <value>no layers</value>
+  </data>
+  <data name="Export_LayerOne" xml:space="preserve">
+    <value>layer {0}</value>
+  </data>
+  <data name="Export_LayerRange" xml:space="preserve">
+    <value>layers {0} to {1}</value>
+  </data>
+  <data name="Export_Meta" xml:space="preserve">
+    <value>{0} rooms · {1} · updated {2}</value>
+  </data>
+  <data name="Export_MetaOne" xml:space="preserve">
+    <value>1 room · {0} · updated {1}</value>
+  </data>
+  <data name="Export_PanelHint" xml:space="preserve">
+    <value>Each panel is one layer. Rooms are addressed layer-room; Up/Down chips lead to another layer.</value>
+  </data>
+  <data name="Export_RoomOne" xml:space="preserve">
+    <value>1 room</value>
+  </data>
+  <data name="Export_Rooms" xml:space="preserve">
+    <value>{0} rooms</value>
+  </data>
+  <data name="Canvas_Hidden" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="Inspector_HiddenRoom" xml:space="preserve">
+    <value>Hidden room</value>
+  </data>
+  <data name="Inspector_HiddenHint" xml:space="preserve">
+    <value>Hidden rooms have a dashed border and stay secret in the game.</value>
+  </data>
+  <data name="Status_HiddenUpdated" xml:space="preserve">
+    <value>Hidden room setting updated.</value>
+  </data>
+  <data name="Status_LinkOneWay" xml:space="preserve">
+    <value>One-way now: {0} {1} → {2}.</value>
+  </data>
+  <data name="Status_LinkTwoWay" xml:space="preserve">
+    <value>Two-way now: {0} ↔ {1}.</value>
+  </data>
+  <data name="Toolbar_AddPlainRoom" xml:space="preserve">
+    <value>Add room</value>
+  </data>
+  <data name="Menu_AddPlainRoom" xml:space="preserve">
+    <value>Add room (hidden, not linked)</value>
+  </data>
+  <data name="Status_AddedHiddenRoom" xml:space="preserve">
+    <value>Added hidden room {0} with no connections.</value>
+  </data>
+  <data name="Menu_ResetLayout" xml:space="preserve">
+    <value>Reset room positions</value>
+  </data>
+  <data name="Status_LayoutReset" xml:space="preserve">
+    <value>Room positions reset on every floor.</value>
+  </data>
+  <data name="Menu_Undo" xml:space="preserve">
+    <value>Undo room move</value>
+  </data>
+  <data name="Menu_Redo" xml:space="preserve">
+    <value>Redo room move</value>
+  </data>
+  <data name="Menu_SnapToGridOn" xml:space="preserve">
+    <value>Snap dragged rooms to grid: on</value>
+  </data>
+  <data name="Menu_SnapToGridOff" xml:space="preserve">
+    <value>Snap dragged rooms to grid: off</value>
+  </data>
+  <data name="Toolbar_SnapOn" xml:space="preserve">
+    <value>Snap: on</value>
+  </data>
+  <data name="Toolbar_SnapOff" xml:space="preserve">
+    <value>Snap: off</value>
+  </data>
+  <data name="Status_SnapOn" xml:space="preserve">
+    <value>Dragged rooms now click into the grid.</value>
+  </data>
+  <data name="Status_SnapOff" xml:space="preserve">
+    <value>Dragged rooms can sit anywhere again.</value>
+  </data>
+  <data name="Status_Undone" xml:space="preserve">
+    <value>Undid the last layout change.</value>
+  </data>
+  <data name="Status_Redone" xml:space="preserve">
+    <value>Redid the layout change.</value>
+  </data>
+</root>

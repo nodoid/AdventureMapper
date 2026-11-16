@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AdventureMapper.Views.WorkspacePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    Title="{loc:Translate App_Title}"
+    BackgroundColor="#F3F5F9">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="{loc:Translate Menu_File}">
+            <MenuFlyoutItem Clicked="OnNewMenuClicked" Text="{loc:Translate Menu_New}" />
+            <MenuFlyoutItem Clicked="OnOpenMenuClicked" Text="{loc:Translate Menu_Open}" />
+            <MenuFlyoutItem Clicked="OnSaveMenuClicked" Text="{loc:Translate Menu_Save}" />
+            <MenuFlyoutItem Clicked="OnSaveAsMenuClicked" Text="{loc:Translate Menu_SaveAs}" />
+            <MenuFlyoutItem Clicked="OnPrintMenuClicked" Text="{loc:Translate Menu_Print}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Clicked="OnExportJpegMenuClicked" Text="{loc:Translate Menu_ExportJpeg}" />
+            <MenuFlyoutItem Clicked="OnExportPdfMenuClicked" Text="{loc:Translate Menu_ExportPdf}" />
+            <MenuFlyoutItem Clicked="OnExportJsonMenuClicked" Text="{loc:Translate Menu_ExportJson}" />
+        </MenuBarItem>
+        <MenuBarItem Text="{loc:Translate Menu_Map}">
+            <MenuFlyoutItem x:Name="UndoMenuItem" Clicked="OnUndoMenuClicked" Text="{loc:Translate Menu_Undo}" />
+            <MenuFlyoutItem x:Name="RedoMenuItem" Clicked="OnRedoMenuClicked" Text="{loc:Translate Menu_Redo}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem x:Name="SnapMenuItem" Clicked="OnSnapToGridMenuClicked" Text="{loc:Translate Menu_SnapToGridOff}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Clicked="OnAddPlainRoomMenuClicked" Text="{loc:Translate Menu_AddPlainRoom}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Clicked="OnAddNorthMenuClicked" Text="{loc:Translate Menu_AddNorth}" />
+            <MenuFlyoutItem Clicked="OnAddNorthEastMenuClicked" Text="{loc:Translate Menu_AddNorthEast}" />
+            <MenuFlyoutItem Clicked="OnAddEastMenuClicked" Text="{loc:Translate Menu_AddEast}" />
+            <MenuFlyoutItem Clicked="OnAddSouthEastMenuClicked" Text="{loc:Translate Menu_AddSouthEast}" />
+            <MenuFlyoutItem Clicked="OnAddSouthMenuClicked" Text="{loc:Translate Menu_AddSouth}" />
+            <MenuFlyoutItem Clicked="OnAddSouthWestMenuClicked" Text="{loc:Translate Menu_AddSouthWest}" />
+            <MenuFlyoutItem Clicked="OnAddWestMenuClicked" Text="{loc:Translate Menu_AddWest}" />
+            <MenuFlyoutItem Clicked="OnAddNorthWestMenuClicked" Text="{loc:Translate Menu_AddNorthWest}" />
+            <MenuFlyoutItem Clicked="OnAddUpMenuClicked" Text="{loc:Translate Menu_AddUp}" />
+            <MenuFlyoutItem Clicked="OnAddDownMenuClicked" Text="{loc:Translate Menu_AddDown}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Clicked="OnResetLayoutMenuClicked" Text="{loc:Translate Menu_ResetLayout}" />
+            <MenuFlyoutItem Clicked="OnDeleteRoomMenuClicked" Text="{loc:Translate Menu_DeleteRoom}" />
+        </MenuBarItem>
+        <MenuBarItem Text="{loc:Translate Menu_Layer}">
+            <MenuFlyoutItem Clicked="OnFloorAboveMenuClicked" Text="{loc:Translate Menu_FloorAbove}" />
+            <MenuFlyoutItem Clicked="OnFloorBelowMenuClicked" Text="{loc:Translate Menu_FloorBelow}" />
+        </MenuBarItem>
+        <MenuBarItem Text="{loc:Translate Menu_Help}">
+            <MenuFlyoutItem Clicked="OnAboutMenuClicked" Text="{loc:Translate Menu_About}" />
+            <MenuFlyoutItem Clicked="OnMapFormatMenuClicked" Text="{loc:Translate Menu_MapFormat}" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ContentView x:Name="ToolbarHost" Grid.Row="0" BackgroundColor="#FFFFFF" />
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,380" ColumnSpacing="0">
+            <ContentView x:Name="CanvasHost" Grid.Column="0" />
+            <Border
+                Grid.Column="1"
+                BackgroundColor="#FFFFFF"
+                Stroke="#D9E0EA"
+                StrokeThickness="1">
+                <ContentView x:Name="InspectorHost" />
+            </Border>
+        </Grid>
+
+        <Grid
+            Grid.Row="2"
+            Padding="12,6"
+            BackgroundColor="#FFFFFF"
+            ColumnDefinitions="*,Auto">
+            <Label x:Name="StatusLabel" Style="{StaticResource Caption}" />
+            <Label
+                x:Name="SaveStatusLabel"
+                Grid.Column="1"
+                Style="{StaticResource Caption}"
+                HorizontalTextAlignment="End" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

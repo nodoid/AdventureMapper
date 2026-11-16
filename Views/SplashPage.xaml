@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="AdventureMapper.Views.SplashPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#102E45"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid x:Name="SplashContent">
+        <VerticalStackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Spacing="0">
+
+            <Image
+                Source="splash_mark.png"
+                WidthRequest="234"
+                HeightRequest="264"
+                Aspect="AspectFit" />
+
+            <BoxView
+                Margin="0,8,0,26"
+                WidthRequest="88"
+                HeightRequest="3"
+                CornerRadius="1.5"
+                Color="#F2B34B" />
+
+            <Label
+                Text="ADVENTURE"
+                CharacterSpacing="3"
+                FontFamily="OpenSansSemibold"
+                FontSize="32"
+                HorizontalTextAlignment="Center"
+                TextColor="#F6E8CB" />
+
+            <Label
+                Text="MAPPER"
+                Margin="0,4,0,0"
+                CharacterSpacing="3"
+                FontFamily="OpenSansSemibold"
+                FontSize="32"
+                HorizontalTextAlignment="Center"
+                TextColor="#F2B34B" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

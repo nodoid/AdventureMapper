@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>false</IsPackable>
+		<AssemblyName>AdventureMapper.Tests</AssemblyName>
+		<!-- The app sources are linked into this project, so the embedded resource names
+		     must keep their application prefix ("AdventureMapper.Resources.Strings.AppResources"). -->
+		<RootNamespace>AdventureMapper</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageReference Include="xunit" Version="2.9.2" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="3.0.2" />
+		<PackageReference Include="SkiaSharp" Version="3.119.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+	</ItemGroup>
+
+	<!-- Application sources under test. The MAUI-only files (views, popups, file dialogs,
+	     platform entry points) need a device runtime and are not linked here. -->
+	<ItemGroup>
+		<Compile Include="..\..\Models\**\*.cs" Link="Linked\Models\%(RecursiveDir)%(Filename)%(Extension)" />
+		<Compile Include="..\..\Resources\Strings\Localization.cs" Link="Linked\Resources\Localization.cs" />
+		<Compile Include="..\..\Rendering\MapLayout.cs" Link="Linked\Rendering\MapLayout.cs" />
+		<Compile Include="..\..\Rendering\MapSheet.cs" Link="Linked\Rendering\MapSheet.cs" />
+		<Compile Include="..\..\Rendering\MapRenderer.cs" Link="Linked\Rendering\MapRenderer.cs" />
+		<Compile Include="..\..\Services\MapSerializer.cs" Link="Linked\Services\MapSerializer.cs" />
+		<Compile Include="..\..\Services\MapEditorState.cs" Link="Linked\Services\MapEditorState.cs" />
+		<Compile Include="..\..\Services\AutoSaveService.cs" Link="Linked\Services\AutoSaveService.cs" />
+		<Compile Include="..\..\Services\PendingFileRouter.cs" Link="Linked\Services\PendingFileRouter.cs" />
+		<Compile Include="..\..\Services\ExportService.cs" Link="Linked\Services\ExportService.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\..\Resources\Strings\AppResources.resx" Link="Resources\Strings\AppResources.resx" />
+		<EmbeddedResource Include="..\..\Resources\Strings\AppResources.de.resx" Link="Resources\Strings\AppResources.de.resx" />
+	</ItemGroup>
+
+</Project>

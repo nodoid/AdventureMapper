@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="AdventureMapper.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="ToolbarButton" TargetType="Button">
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="Padding" Value="12,6" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="BackgroundColor" Value="#D9E0EA" />
+                <Setter Property="TextColor" Value="#1C1F27" />
+                <Setter Property="MinimumHeightRequest" Value="34" />
+            </Style>
+
+            <Style x:Key="AccentButton" TargetType="Button" BasedOn="{StaticResource ToolbarButton}">
+                <Setter Property="BackgroundColor" Value="#3F6FBF" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+
+            <Style x:Key="DangerButton" TargetType="Button" BasedOn="{StaticResource ToolbarButton}">
+                <Setter Property="BackgroundColor" Value="#FDECEA" />
+                <Setter Property="TextColor" Value="#B3261E" />
+            </Style>
+
+            <Style x:Key="SectionHeading" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="OpenSansSemibold" />
+                <Setter Property="TextColor" Value="#1C1F27" />
+            </Style>
+
+            <Style x:Key="Caption" TargetType="Label">
+                <Setter Property="FontSize" Value="11.5" />
+                <Setter Property="TextColor" Value="#5A6478" />
+            </Style>
+
+            <Style x:Key="FieldEntry" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#F7F9FC" />
+                <Setter Property="TextColor" Value="#1C1F27" />
+                <Setter Property="PlaceholderColor" Value="#8A93A5" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+
+            <Style x:Key="FieldEditor" TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="#F7F9FC" />
+                <Setter Property="TextColor" Value="#1C1F27" />
+                <Setter Property="PlaceholderColor" Value="#8A93A5" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+
+            <Style x:Key="FieldPicker" TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="#F7F9FC" />
+                <Setter Property="TextColor" Value="#1C1F27" />
+                <Setter Property="TitleColor" Value="#8A93A5" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

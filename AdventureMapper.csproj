@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net10.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('linux'))">$(TargetFrameworks);net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.22000.0</TargetFrameworks>
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>AdventureMapper</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- XAML source generation (MAUI 10 default). -->
+		<MauiXamlInflator>SourceGen</MauiXamlInflator>
+
+		<!-- Author and licence -->
+		<Authors>Paul F. Johnson</Authors>
+		<Company>Paul F. Johnson</Company>
+		<Copyright>© 2026 Paul F. Johnson</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+		<!-- Display name -->
+		<ApplicationTitle>Adventure Mapper</ApplicationTitle>
+
+		<!-- App Identifier: matches the two development provisioning profiles. -->
+		<ApplicationId>uk.co.allthejohnsons.advmapper</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- The Windows package identity (reserved name / publisher) lives in Platforms/Windows/Package.appxmanifest.
+		     File associations require a packaged MSIX app. -->
+		<WindowsPackageType>MSIX</WindowsPackageType>
+
+		<!-- Platforms. Android: 12L (API 32) is the tablet baseline. iOS 18 and macOS 26 are the requested floors. -->
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">18.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">26.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">32.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.22000.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.22000.0</TargetPlatformMinVersion>
+	</PropertyGroup>
+
+	<!-- Apple signing. The profiles live in Signing/ and are also installed into
+	     ~/Library/MobileDevice/Provisioning Profiles (see README). -->
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+		<CodesignKey>Apple Development</CodesignKey>
+		<CodesignProvision>devel-advmapper</CodesignProvision>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+		<CodesignKey>Apple Development</CodesignKey>
+		<CodesignProvision>devel-advmapper-mac</CodesignProvision>
+		<CodesignEntitlements>Platforms/MacCatalyst/Entitlements.plist</CodesignEntitlements>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#102E45" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#102E45" BaseSize="300,300" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- The xunit suite in Tests/ is a separate project and is not part of the app. -->
+		<Compile Remove="Tests\**\*.cs" />
+		<None Remove="Tests\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.4" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="16.0.0" />
+		<PackageReference Include="Mopups" Version="1.3.4" />
+	</ItemGroup>
+
+</Project>

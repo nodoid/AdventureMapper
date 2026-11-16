@@ -1,0 +1,146 @@
+{
+  "format": "adventure-mapper",
+  "formatVersion": 1,
+  "title": "Hidden Routes Test",
+  "author": "Adventure Mapper",
+  "notes": "Ten visible rooms, two secret rooms and three one-way routes, used to check the Adventure Creator Studio import.",
+  "createdUtc": "2026-11-16T00:00:00Z",
+  "modifiedUtc": "2026-11-16T00:00:00Z",
+  "nextRoomId": 13,
+  "layers": [
+    { "number": -1, "name": "Cellar level" },
+    { "number": 0, "name": "Ground" },
+    { "number": 1, "name": "Upper 1" }
+  ],
+  "rooms": [
+    {
+      "id": 1, "layer": 0, "column": 0, "row": 0,
+      "name": "Entrance", "kind": "normal",
+      "description": "The door swings shut behind you. Dust hangs in the still air of the hallway.",
+      "connections": [
+        { "direction": "east", "targetLayer": 0, "targetRoom": 2 },
+        { "direction": "south", "targetLayer": 0, "targetRoom": 6 }
+      ]
+    },
+    {
+      "id": 2, "layer": 0, "column": 1, "row": 0,
+      "name": "Great Hall", "kind": "normal",
+      "description": "A long hall with threadbare banners. Doorways open to the north, east and south.",
+      "connections": [
+        { "direction": "west", "targetLayer": 0, "targetRoom": 1 },
+        { "direction": "north", "targetLayer": 0, "targetRoom": 3 },
+        { "direction": "east", "targetLayer": 0, "targetRoom": 4 },
+        { "direction": "south", "targetLayer": 0, "targetRoom": 7 }
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "title": "The groaning door",
+          "kind": "mechanism",
+          "prompt": "The door groans but will not open.",
+          "solution": "Pull the iron ring beside the hearth.",
+          "reward": "The way south is clear."
+        }
+      ]
+    },
+    {
+      "id": 3, "layer": 0, "column": 1, "row": -1,
+      "name": "Library", "kind": "normal",
+      "description": "Shelves climb the walls. One shelf sits a finger's width out from the rest.",
+      "connections": [
+        { "direction": "south", "targetLayer": 0, "targetRoom": 2 },
+        { "direction": "up", "targetLayer": 1, "targetRoom": 9 },
+        { "direction": "west", "targetLayer": 0, "targetRoom": 11, "hidden": true }
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "title": "The secret shelf",
+          "kind": "mechanism",
+          "prompt": "The shelf will not move.",
+          "solution": "Pull the red book.",
+          "reward": "A hidden study opens to the west."
+        }
+      ]
+    },
+    {
+      "id": 4, "layer": 0, "column": 2, "row": 0,
+      "name": "Kitchen", "kind": "normal",
+      "description": "Copper pots hang above a cold hearth. A narrow stair leads north.",
+      "connections": [
+        { "direction": "west", "targetLayer": 0, "targetRoom": 2 },
+        { "direction": "north", "targetLayer": 0, "targetRoom": 8 },
+        { "direction": "south", "targetLayer": 0, "targetRoom": 5 }
+      ]
+    },
+    {
+      "id": 5, "layer": 0, "column": 2, "row": 1,
+      "name": "Garden", "kind": "normal",
+      "description": "Ivy has taken the walls. A bank of earth slopes away to the west.",
+      "connections": [
+        { "direction": "north", "targetLayer": 0, "targetRoom": 4 },
+        { "direction": "west", "targetLayer": 0, "targetRoom": 6 }
+      ]
+    },
+    {
+      "id": 6, "layer": 0, "column": 0, "row": 1,
+      "name": "Cellar", "kind": "normal",
+      "description": "Barrels stand in rows. A stone hatch in the floor is held open by a brick.",
+      "connections": [
+        { "direction": "north", "targetLayer": 0, "targetRoom": 1 },
+        { "direction": "east", "targetLayer": 0, "targetRoom": 7 },
+        { "direction": "down", "targetLayer": -1, "targetRoom": 12, "hidden": true }
+      ]
+    },
+    {
+      "id": 7, "layer": 0, "column": 1, "row": 1,
+      "name": "Vault", "kind": "normal",
+      "description": "An iron door stands open. Someone has swept the floor, recently.",
+      "connections": [
+        { "direction": "west", "targetLayer": 0, "targetRoom": 6 },
+        { "direction": "north", "targetLayer": 0, "targetRoom": 2 }
+      ]
+    },
+    {
+      "id": 8, "layer": 0, "column": 2, "row": -1,
+      "name": "Tower Base", "kind": "normal",
+      "description": "A round room at the foot of the tower. Stone steps spiral upwards.",
+      "connections": [
+        { "direction": "south", "targetLayer": 0, "targetRoom": 4 },
+        { "direction": "up", "targetLayer": 1, "targetRoom": 10 }
+      ]
+    },
+    {
+      "id": 9, "layer": 1, "column": 1, "row": -1,
+      "name": "Attic", "kind": "normal",
+      "description": "Beams and old crates. A trapdoor in the floor drops back into the library.",
+      "connections": [
+        { "direction": "down", "targetLayer": 0, "targetRoom": 3 }
+      ]
+    },
+    {
+      "id": 10, "layer": 1, "column": 2, "row": -1,
+      "name": "Tower Top", "kind": "normal",
+      "description": "Wind and a wide view of the grey hills. There is no stair down, only a drop.",
+      "connections": [
+        { "direction": "down", "targetLayer": 0, "targetRoom": 5 }
+      ]
+    },
+    {
+      "id": 11, "layer": 0, "column": 0, "row": -1,
+      "name": "Secret Study", "kind": "normal", "isHidden": true,
+      "description": "A narrow room behind the shelf. A desk, a cold candle and a locked drawer.",
+      "connections": [
+        { "direction": "east", "targetLayer": 0, "targetRoom": 3, "hidden": true }
+      ]
+    },
+    {
+      "id": 12, "layer": -1, "column": 0, "row": 0,
+      "name": "Crypt", "kind": "normal", "isHidden": true,
+      "description": "Cold air and three stone coffins. The hatch above is the only way out.",
+      "connections": [
+        { "direction": "up", "targetLayer": 0, "targetRoom": 6, "hidden": true }
+      ]
+    }
+  ]
+}

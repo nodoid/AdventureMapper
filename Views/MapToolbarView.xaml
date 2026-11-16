@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="AdventureMapper.Views.MapToolbarView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings">
+
+    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+        <HorizontalStackLayout Padding="12,10" Spacing="8">
+            <Button Text="{loc:Translate Toolbar_New}" Style="{StaticResource ToolbarButton}" Clicked="OnNewClicked" />
+            <Button Text="{loc:Translate Toolbar_Open}" Style="{StaticResource ToolbarButton}" Clicked="OnOpenClicked" />
+            <Button Text="{loc:Translate Common_Save}" Style="{StaticResource ToolbarButton}" Clicked="OnSaveClicked" />
+            <Button Text="{loc:Translate Toolbar_Export}" Style="{StaticResource ToolbarButton}" Clicked="OnExportClicked" />
+            <Button Text="{loc:Translate Toolbar_Print}" Style="{StaticResource ToolbarButton}" Clicked="OnPrintClicked" />
+            <Button x:Name="UndoButton" Text="{loc:Translate Menu_Undo}" Style="{StaticResource ToolbarButton}" Clicked="OnUndoClicked" />
+            <Button x:Name="RedoButton" Text="{loc:Translate Menu_Redo}" Style="{StaticResource ToolbarButton}" Clicked="OnRedoClicked" />
+
+            <BoxView WidthRequest="1" Color="#E9EEF5" Margin="6,2" />
+
+            <Button Text="{loc:Translate Toolbar_AddPlainRoom}" Style="{StaticResource ToolbarButton}" Clicked="OnAddPlainRoomClicked" />
+            <Button x:Name="SnapButton" Text="{loc:Translate Toolbar_SnapOff}" Style="{StaticResource ToolbarButton}" Clicked="OnSnapClicked" />
+            <Label Text="{loc:Translate Toolbar_AddRoom}" Style="{StaticResource Caption}" VerticalOptions="Center" />
+            <Button Text="{loc:Translate Toolbar_N}" Style="{StaticResource ToolbarButton}" Clicked="OnAddNorthClicked" />
+            <Button Text="{loc:Translate Toolbar_NE}" Style="{StaticResource ToolbarButton}" Clicked="OnAddNorthEastClicked" />
+            <Button Text="{loc:Translate Toolbar_E}" Style="{StaticResource ToolbarButton}" Clicked="OnAddEastClicked" />
+            <Button Text="{loc:Translate Toolbar_SE}" Style="{StaticResource ToolbarButton}" Clicked="OnAddSouthEastClicked" />
+            <Button Text="{loc:Translate Toolbar_S}" Style="{StaticResource ToolbarButton}" Clicked="OnAddSouthClicked" />
+            <Button Text="{loc:Translate Toolbar_SW}" Style="{StaticResource ToolbarButton}" Clicked="OnAddSouthWestClicked" />
+            <Button Text="{loc:Translate Toolbar_W}" Style="{StaticResource ToolbarButton}" Clicked="OnAddWestClicked" />
+            <Button Text="{loc:Translate Toolbar_NW}" Style="{StaticResource ToolbarButton}" Clicked="OnAddNorthWestClicked" />
+            <Button Text="{loc:Translate Toolbar_UpFloor}" Style="{StaticResource AccentButton}" Clicked="OnAddUpClicked" />
+            <Button Text="{loc:Translate Toolbar_DownFloor}" Style="{StaticResource AccentButton}" Clicked="OnAddDownClicked" />
+
+            <BoxView WidthRequest="1" Color="#E9EEF5" Margin="6,2" />
+
+            <Button Text="{loc:Translate Toolbar_PrevFloor}" Style="{StaticResource ToolbarButton}" Clicked="OnPreviousFloorClicked" />
+            <Label x:Name="FloorLabel" Style="{StaticResource Caption}" VerticalOptions="Center" />
+            <Button Text="{loc:Translate Toolbar_NextFloor}" Style="{StaticResource ToolbarButton}" Clicked="OnNextFloorClicked" />
+        </HorizontalStackLayout>
+    </ScrollView>
+
+</ContentView>

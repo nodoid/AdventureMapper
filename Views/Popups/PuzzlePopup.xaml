@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="AdventureMapper.Views.Popups.PuzzlePopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+    BackgroundColor="#99000000"
+    CloseWhenBackgroundIsClicked="False">
+
+    <Grid Padding="24">
+        <Border
+            Padding="22"
+            HorizontalOptions="Center"
+            MaximumWidthRequest="620"
+            BackgroundColor="#FFFFFF"
+            Stroke="#D9E0EA"
+            StrokeThickness="1"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16" />
+            </Border.StrokeShape>
+
+            <ScrollView MaximumHeightRequest="620">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        x:Name="HeadingLabel"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="18"
+                        Text="{loc:Translate Puzzle_Title}"
+                        TextColor="#1C1F27" />
+
+                    <Entry
+                        x:Name="TitleEntry"
+                        Placeholder="{loc:Translate Puzzle_NamePlaceholder}"
+                        Style="{StaticResource FieldEntry}" />
+
+                    <Picker
+                        x:Name="KindPicker"
+                        Style="{StaticResource FieldPicker}"
+                        Title="{loc:Translate Puzzle_TypePlaceholder}" />
+
+                    <Label Style="{StaticResource Caption}" Text="{loc:Translate Puzzle_Prompt}" />
+                    <Editor
+                        x:Name="PromptEditor"
+                        AutoSize="TextChanges"
+                        HeightRequest="90"
+                        Placeholder="{loc:Translate Puzzle_PromptPlaceholder}"
+                        PlaceholderColor="#8A93A5"
+                        Style="{StaticResource FieldEditor}" />
+
+                    <Label Style="{StaticResource Caption}" Text="{loc:Translate Puzzle_Solution}" />
+                    <Editor
+                        x:Name="SolutionEditor"
+                        AutoSize="TextChanges"
+                        HeightRequest="70"
+                        Placeholder="{loc:Translate Puzzle_SolutionPlaceholder}"
+                        PlaceholderColor="#8A93A5"
+                        Style="{StaticResource FieldEditor}" />
+
+                    <Entry
+                        x:Name="RewardEntry"
+                        Placeholder="{loc:Translate Puzzle_Reward}"
+                        Style="{StaticResource FieldEntry}" />
+
+                    <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,6,0,0">
+                        <Label Style="{StaticResource Caption}" Text="{loc:Translate Puzzle_Hint}" VerticalOptions="Center" />
+                        <Button
+                            Grid.Column="1"
+                            Clicked="OnCancelClicked"
+                            Style="{StaticResource ToolbarButton}"
+                            Text="{loc:Translate Common_Cancel}" />
+                        <Button
+                            Grid.Column="2"
+                            Clicked="OnSaveClicked"
+                            Style="{StaticResource AccentButton}"
+                            Text="{loc:Translate Common_Save}" />
+                    </Grid>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+    </Grid>
+
+</pages:PopupPage>

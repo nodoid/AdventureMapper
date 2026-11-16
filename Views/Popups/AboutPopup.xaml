@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="AdventureMapper.Views.Popups.AboutPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loc="clr-namespace:AdventureMapper.Resources.Strings"
+    xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+    BackgroundColor="#99000000"
+    CloseWhenBackgroundIsClicked="False">
+
+    <Grid Padding="24">
+        <Border
+            Padding="0"
+            HorizontalOptions="Center"
+            MaximumWidthRequest="460"
+            BackgroundColor="#FFFFFF"
+            Stroke="#D9E0EA"
+            StrokeThickness="1"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="0">
+                <Image
+                    Margin="0,24,0,12"
+                    Source="splash_mark.png"
+                    WidthRequest="86"
+                    HeightRequest="97"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="{loc:Translate App_Title}"
+                    FontFamily="OpenSansSemibold"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#1C1F27" />
+
+                <BoxView
+                    Margin="0,10,0,18"
+                    WidthRequest="52"
+                    HeightRequest="3"
+                    CornerRadius="1.5"
+                    Color="#F2B34B"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Margin="24,0"
+                    Text="{loc:Translate About_Body}"
+                    FontSize="13"
+                    LineHeight="1.35"
+                    TextColor="#3B4558" />
+
+                <Button
+                    Margin="24"
+                    Clicked="OnCloseClicked"
+                    HorizontalOptions="End"
+                    Style="{StaticResource AccentButton}"
+                    Text="{loc:Translate Common_Close}" />
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+
+</pages:PopupPage>

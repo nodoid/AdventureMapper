@@ -1,0 +1,37 @@
+# Build outputs
+bin/
+obj/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+
+# OS-generated files
+.DS_Store
+
+# Store assets and release artifacts are generated, not source.
+stores/
+releases/
+*.ipa
+*.aab
+*.apk
+*.dmg
+*.pkg
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+
+# Signing material and keys must never be committed.
+Signing/
+*.mobileprovision
+*.provisionprofile
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.cer
+
+# Sample screenshots (the .ama files are kept)
+Samples/*.png

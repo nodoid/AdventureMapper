@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <!-- Reserved Windows package identity. -->
+  <Identity
+    Name="49556nodoid.AdventureMapper"
+    Publisher="CN=A6EAEB04-6634-41C1-BDFE-695819ECE444"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="354BCCEA-CAEB-4799-A1F9-4CAA7990022F" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+
+  <Properties>
+    <DisplayName>Adventure Mapper</DisplayName>
+    <PublisherDisplayName>all-the-johnsons</PublisherDisplayName>
+    <Logo>$placeholder$.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.22000.0" MaxVersionTested="10.0.26100.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22000.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements
+        DisplayName="Adventure Mapper"
+        Description="Design adventure game maps by layer, room and puzzle."
+        Square150x150Logo="$placeholder$.png"
+        Square44x44Logo="$placeholder$.png"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
+        <uap:SplashScreen Image="$placeholder$.png" />
+      </uap:VisualElements>
+
+      <!-- Double-clicking a .ama file launches Adventure Mapper with that map. -->
+      <uap:Extension Category="windows.fileTypeAssociation">
+        <uap:FileTypeAssociation Name="adventuremapper">
+          <uap:DisplayName>Adventure Mapper map</uap:DisplayName>
+          <uap:SupportedFileTypes>
+            <uap:FileType>.ama</uap:FileType>
+          </uap:SupportedFileTypes>
+        </uap:FileTypeAssociation>
+      </uap:Extension>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+
+</Package>
