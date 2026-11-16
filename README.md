@@ -109,23 +109,29 @@ project file when building on Windows.
 
 ### Signing (iOS and macOS)
 
-The development profiles from `~/Downloads` are copied into `Signing/`:
+Profiles from `~/Downloads` are copied into `Signing/` (git-ignored):
 
-* `devel-advmapper.mobileprovision` — iOS
-* `devel-advmapper-mac.provisionprofile` — macOS
+* `devel-advmapper.mobileprovision` — iOS development
+* `devel-advmapper-mac.provisionprofile` — macOS development
+* `rel-advmapper.mobileprovision` — iOS App Store release
+* `rel-advmapper-mac.provisionprofile` — macOS App Store release
 
 They are installed for Xcode/MSBuild under:
 
 ```
 ~/Library/MobileDevice/Provisioning Profiles/
-  cba07b13-b2b0-416f-b02d-6ae403a4cc87.mobileprovision
-  41ed4742-1b25-49c5-93a5-0f7661e55ec9.provisionprofile
+  cba07b13-b2b0-416f-b02d-6ae403a4cc87.mobileprovision   (devel-advmapper)
+  41ed4742-1b25-49c5-93a5-0f7661e55ec9.provisionprofile   (devel-advmapper-mac)
+  722bd3a3-eddd-44e1-ac1b-36170d44fe51.mobileprovision   (rel-advmapper)
+  ee078cc9-e8b1-437f-9eb2-b024f04e5540.provisionprofile   (rel-advmapper-mac)
 ```
 
-Both use bundle id `uk.co.allthejohnsons.advmapper` and team `3UH7BE38T3`; the project sets
-`CodesignProvision` (`devel-advmapper`, `devel-advmapper-mac`) and an Apple Development key.
-Mac Catalyst builds use `Platforms/MacCatalyst/Entitlements.plist`, which enables the app
-sandbox with read/write access to user-selected files.
+All use bundle id `uk.co.allthejohnsons.advmapper` and team `3UH7BE38T3`. The project
+selects by configuration: Debug uses `devel-advmapper` / `devel-advmapper-mac` and an
+Apple Development key; Release uses `rel-advmapper` / `rel-advmapper-mac` and
+`Apple Distribution: Paul Johnson (3UH7BE38T3)`. Mac Catalyst builds use
+`Platforms/MacCatalyst/Entitlements.plist`, which enables the app sandbox with read/write
+access to user-selected files.
 
 ### Windows identity
 

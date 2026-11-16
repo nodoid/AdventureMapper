@@ -14,12 +14,14 @@ public partial class AppShell : Shell
 		tabs.Items.Add(new ShellContent
 		{
 			Title = L.T("Tab_Map"),
+			Icon = "tab_map.png",
 			Route = "map",
 			Content = mapPage,
 		});
 		tabs.Items.Add(new ShellContent
 		{
 			Title = L.T("Tab_Details"),
+			Icon = "tab_details.png",
 			Route = "details",
 			Content = inspectorPage,
 		});

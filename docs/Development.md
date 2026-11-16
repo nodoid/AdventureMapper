@@ -57,14 +57,18 @@ and the blue one-way colour live there.
 
 ### Apple signing
 
-Development profiles are kept out of source control (`Signing/` is ignored) and
-installed into `~/Library/MobileDevice/Provisioning Profiles`. The project sets:
+Signing profiles are kept out of source control (`Signing/` is ignored) and
+installed into `~/Library/MobileDevice/Provisioning Profiles`. The project selects
+the profile by configuration:
 
-* `CodesignProvision=devel-advmapper` for iOS
-* `CodesignProvision=devel-advmapper-mac` for Mac Catalyst
-* `CodesignEntitlements=Platforms/MacCatalyst/Entitlements.plist`
+| Configuration | iOS | Mac Catalyst | Key |
+| --- | --- | --- | --- |
+| Debug | `devel-advmapper` | `devel-advmapper-mac` | Apple Development |
+| Release | `rel-advmapper` | `rel-advmapper-mac` | Apple Distribution |
 
-Replace these with your own profiles and bundle id for a fork.
+Mac Catalyst builds also set
+`CodesignEntitlements=Platforms/MacCatalyst/Entitlements.plist`. Replace the
+profile names, key and bundle id with your own for a fork.
 
 ### Mac Catalyst
 
@@ -130,11 +134,17 @@ Use `-p:AndroidPackageFormats=apk` for the sideloadable APK.
 
 ```bash
 dotnet publish AdventureMapper.csproj -f net10.0-maccatalyst -c Release \
-  -p:RuntimeIdentifier=maccatalyst-arm64
+  -p:RuntimeIdentifier=maccatalyst-arm64 -p:CreatePackage=false
+
+productbuild --component "bin/Release/net10.0-maccatalyst/maccatalyst-arm64/Adventure Mapper.app" \
+  /Applications \
+  --sign "3rd Party Mac Developer Installer: Paul Johnson (3UH7BE38T3)" \
+  releases/AdventureMapper-1.0-macos-arm64.pkg
 ```
 
-Zip or package the `.app` from
-`bin/Release/net10.0-maccatalyst/maccatalyst-arm64/publish/`.
+Zip or package the signed `.app` from
+`bin/Release/net10.0-maccatalyst/maccatalyst-arm64/`. The `.pkg` is the App Store
+installer; the zip and dmg carry the same App Store-signed bundle.
 
 ### iOS
 
@@ -143,9 +153,9 @@ dotnet publish AdventureMapper.csproj -f net10.0-ios -c Release \
   -p:RuntimeIdentifier=ios-arm64 -p:BuildIpa=true
 ```
 
-The IPA is signed with the development profile configured in the project. For
-App Store distribution, replace it with a distribution profile and export
-through Xcode's organizer or `xcodebuild -exportArchive`.
+The Release configuration selects `rel-advmapper` and the Apple Distribution
+identity, so the IPA has `get-task-allow` false and can be uploaded with
+transporter or Xcode Organizer.
 
 ### Windows MSIX
 

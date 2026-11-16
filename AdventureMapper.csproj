@@ -46,13 +46,17 @@
 	<!-- Apple signing. The profiles live in Signing/ and are also installed into
 	     ~/Library/MobileDevice/Provisioning Profiles (see README). -->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<CodesignKey>Apple Development</CodesignKey>
-		<CodesignProvision>devel-advmapper</CodesignProvision>
+		<CodesignKey Condition="'$(Configuration)' == 'Release'">Apple Distribution: Paul Johnson (3UH7BE38T3)</CodesignKey>
+		<CodesignKey Condition="'$(Configuration)' != 'Release'">Apple Development</CodesignKey>
+		<CodesignProvision Condition="'$(Configuration)' == 'Release'">rel-advmapper</CodesignProvision>
+		<CodesignProvision Condition="'$(Configuration)' != 'Release'">devel-advmapper</CodesignProvision>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
-		<CodesignKey>Apple Development</CodesignKey>
-		<CodesignProvision>devel-advmapper-mac</CodesignProvision>
+		<CodesignKey Condition="'$(Configuration)' == 'Release'">Apple Distribution: Paul Johnson (3UH7BE38T3)</CodesignKey>
+		<CodesignKey Condition="'$(Configuration)' != 'Release'">Apple Development</CodesignKey>
+		<CodesignProvision Condition="'$(Configuration)' == 'Release'">rel-advmapper-mac</CodesignProvision>
+		<CodesignProvision Condition="'$(Configuration)' != 'Release'">devel-advmapper-mac</CodesignProvision>
 		<CodesignEntitlements>Platforms/MacCatalyst/Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
