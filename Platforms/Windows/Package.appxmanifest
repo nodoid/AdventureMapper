@@ -42,14 +42,16 @@
       </uap:VisualElements>
 
       <!-- Double-clicking a .ama file launches Adventure Mapper with that map. -->
-      <uap:Extension Category="windows.fileTypeAssociation">
-        <uap:FileTypeAssociation Name="adventuremapper">
-          <uap:DisplayName>Adventure Mapper map</uap:DisplayName>
-          <uap:SupportedFileTypes>
-            <uap:FileType>.ama</uap:FileType>
-          </uap:SupportedFileTypes>
-        </uap:FileTypeAssociation>
-      </uap:Extension>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="adventuremapper">
+            <uap:DisplayName>Adventure Mapper map</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.ama</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
 

@@ -81,7 +81,36 @@ Android and iOS.
 
 The Windows target is only added when building on Windows. The package identity
 is in `Platforms/Windows/Package.appxmanifest`; file associations require the
-packaged (MSIX) build. For local unpackaged testing:
+packaged (MSIX) build. On this multi-target project, pass `UseMonoRuntime=false`
+for Windows publishes; otherwise restore asks for the nonexistent
+`Microsoft.NETCore.App.Runtime.Mono.win-x64` package.
+
+Build a self-contained MSIX (no separate .NET or Windows App SDK runtime):
+
+```powershell
+dotnet publish AdventureMapper.csproj -f net10.0-windows10.0.22000.0 -c Release `
+  -p:RuntimeIdentifier=win-x64 -p:Platform=x64 `
+  -p:UseMonoRuntime=false -p:SelfContained=true -p:WindowsAppSDKSelfContained=true `
+  -p:WindowsPackageType=MSIX -p:GenerateAppxPackageOnBuild=true `
+  -p:AppxPackageDir=C:\out\msix\x64\ -p:AppxBundle=Never `
+  -p:UapAppxPackageBuildMode=SideloadOnly -p:AppxPackageSigningEnabled=false
+```
+
+Use `win-arm64` / `Platform=ARM64` for ARM64. The package is written to
+`AppxPackageDir\<name>_Test\*.msix`. Sign it with `signtool.exe` from the
+`Microsoft.Windows.SDK.BuildTools` NuGet cache (the MAUI restore already brings it
+in), using a certificate whose subject matches the manifest publisher:
+
+```powershell
+$signtool = Get-ChildItem "$env:USERPROFILE\.nuget\packages\microsoft.windows.sdk.buildtools" `
+  -Recurse -Filter signtool.exe | Where-Object FullName -Match '\\arm64\\' | Select-Object -Last 1
+& $signtool.FullName sign /fd SHA256 /f msix-signing.pfx /p <password> `
+  /tr http://timestamp.digicert.com /td SHA256 .\AdventureMapper_1.0.0.0_x64.msix
+```
+
+The build emits a harmless warning that `mspdbcmf.exe` is missing and no symbols
+package will be generated. MSIX packaging requires a Windows host; the macOS
+host builds the Apple and Android targets. For local unpackaged testing:
 
 ```bash
 dotnet build -f net10.0-windows10.0.22000.0 -c Debug \
@@ -170,7 +199,7 @@ code-signing certificate matching the publisher in `Package.appxmanifest`.
 
 ## Known limitations
 
-* The Windows print path and MSIX packaging cannot be built or tested on macOS.
+* The Windows print path has not been tested against a physical printer; MSIX packaging requires a Windows host.
 * Printing has not been verified against physical printer hardware.
 * Phones install the app and use the compact tab layout; the layout is designed
   for tablets and desktops.

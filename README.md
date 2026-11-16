@@ -144,9 +144,8 @@ access to user-selected files.
 File association and file activation require the packaged (MSIX) build, which is why
 `WindowsPackageType` is MSIX rather than unpackaged.
 
-For local testing without the Windows SDK (and therefore without MSIX packaging), build the
-app unpackaged with the Windows App SDK bundled. Without the self-contained flag the bootstrapper
-fails with `Class not registered`:
+For local unpackaged testing, build the app with the Windows App SDK bundled. Without the
+self-contained flag the bootstrapper fails with `Class not registered`:
 
 ```bash
 dotnet build -f net10.0-windows10.0.22000.0 -c Debug \
@@ -154,8 +153,8 @@ dotnet build -f net10.0-windows10.0.22000.0 -c Debug \
 ```
 
 The resulting `AdventureMapper.exe` runs on Windows 11 ARM64 and x64 with the menu bar, canvas,
-inspector, autosave and JPEG/PDF/JSON export working; the `.ama` double-click association only
-applies once the MSIX package is built with `makeappx`/`signtool` from the Windows SDK.
+inspector, autosave and JPEG/PDF/JSON export working. The `.ama` double-click association is
+provided by the signed x64 and ARM64 MSIX packages in `releases/`; see `releases/README.md`.
 
 ## Tests
 
