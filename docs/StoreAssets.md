@@ -3,6 +3,36 @@
 The generated assets live in `stores/` and are not committed (they are release
 material, not source). The demo videos live in `~/Movies`.
 
+## Microsoft Store — requirements
+
+Checked against Microsoft Learn's MSIX listing guidance on 17 November 2026:
+
+* **Desktop screenshots** — 1–10, PNG, at least 1366 × 768, 50 MB maximum;
+  1920 × 1080 is the recommended size.
+* **Store logo** — 1:1 app tile icon, 300 × 300 PNG.
+* **Super Hero art** — 16:9, 1920 × 1080 or 3840 × 2160 PNG, no product title or
+  other text.
+* Keep critical UI in the top two-thirds; the bottom third may receive a store
+  overlay. Do not add logos, icons or marketing messages to screenshots.
+
+The Windows set is in `stores/windows/`: three 1920 × 1080 screenshots, a 300 ×
+300 store tile icon and a text-free 1920 × 1080 Super Hero image. The full listing
+copy and per-image captions are in `windows/microsoft-store-listing.md`.
+
+The three Windows screenshots are native captures from the signed ARM64 MSIX on
+a Windows 11 ARM64 VM, opened with `Samples/ten-room-map.ama`. The window is set
+to 1920 × 1080 and captured with a DPI-aware `PrintWindow` call, which keeps the
+app window and excludes the VM desktop watermark. They are not crops or upscales
+of the macOS screenshots.
+
+The Super Hero image is rendered from the app icon's route-and-pin mark in the
+same navy and gold palette, without text.
+
+The earlier MSIX build had an incomplete packaged `resources.pri` (about 38 KB)
+and exited at launch in `Microsoft.UI.Xaml.dll` with `0xc000027b`. A clean
+rebuild produced the full app PRI (about 1.39 MB) and the signed package now
+launches and supplies these captures.
+
 ## iOS screenshots — requirements
 
 Checked against Apple's App Store Connect *Screenshot specifications* on

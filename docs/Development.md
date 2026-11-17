@@ -108,6 +108,11 @@ $signtool = Get-ChildItem "$env:USERPROFILE\.nuget\packages\microsoft.windows.sd
   /tr http://timestamp.digicert.com /td SHA256 .\AdventureMapper_1.0.0.0_x64.msix
 ```
 
+Package from a clean source tree. An incremental package can contain an incomplete
+`resources.pri` (about 38 KB) and crash at launch in `Microsoft.UI.Xaml.dll` with
+`0xc000027b`; the packaged `resources.pri` should be about 1.39 MB for the ARM64
+build and the installed app must be launched once before publishing.
+
 The build emits a harmless warning that `mspdbcmf.exe` is missing and no symbols
 package will be generated. MSIX packaging requires a Windows host; the macOS
 host builds the Apple and Android targets. For local unpackaged testing:
